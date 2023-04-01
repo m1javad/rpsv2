@@ -20,6 +20,12 @@
 .page.active {
     display: block;
 }
+.text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 65px;
+    color: black;
+    
+}
 
 
 

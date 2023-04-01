@@ -1,7 +1,42 @@
-function showElement(n) {
-    var elements = document.getElementsByClassName("start page");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].classList.remove("active");
-    }
-    elements[n-1].classList.add("active");
-}
+window.onload = function() {
+
+
+    var button = document.getElementById("startbutton");
+button.addEventListener("click", toggleDivs);
+
+
+
+
+  };  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function toggleDivs() {
+    var start = document.getElementById("StartPage");
+    var game = document.getElementById("GamePage");
+    StartPage.style.display = "none";
+    GamePage.style.display = "block";
+  }
