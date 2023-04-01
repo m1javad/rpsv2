@@ -1,0 +1,42 @@
+.start.page {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+}
+.page.active {
+    display: block;
+}
+
+
+
+.start.page {
+    background-color: #ffcccc;
+}
+
+.game.page {
+    background-color: #ccffcc;
+}
+
+.ending.page {
+    background-color: #ccccff;
+}
+
+#startbutton {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight:bold
+}
