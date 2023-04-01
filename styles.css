@@ -7,6 +7,25 @@
     overflow: hidden;
 }
 
+
+#StartPage {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  #StartPage.fade {
+    opacity: 0;
+  }
+  
+  #GamePage {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  #GamePage.fade {
+    opacity: 1;
+  }
+
 .page {
     position: absolute;
     top: 0;
