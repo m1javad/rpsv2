@@ -1,14 +1,72 @@
 window.onload = function() {
 
 var button = document.getElementById("startbutton");
-button.addEventListener("click", HideStartShowGame);
-
-
-var button = document.getElementById("test");
-button.addEventListener("click", doSCLanimaton);
+button.addEventListener("click", function(){
 
     
-  
+    HideStartShowGame()
+});
+
+
+var button1 = document.getElementById("test");
+var button2 = document.getElementById("test2");
+var button3 = document.getElementById("test3");
+button1.addEventListener("click", function(){
+    button1.disabled = true;
+    setTimeout(function() {
+    button1.disabled = false;
+  }, 3000);
+  button2.disabled = true;
+    setTimeout(function() {
+    button2.disabled = false;
+  }, 3000);
+  button3.disabled = true;
+    setTimeout(function() {
+    button3.disabled = false;
+  }, 3000);
+    doRLanimaton()
+});
+button2.addEventListener("click", function(){
+    button1.disabled = true;
+    setTimeout(function() {
+    button1.disabled = false;
+  }, 3000);
+  button2.disabled = true;
+    setTimeout(function() {
+    button2.disabled = false;
+  }, 3000);
+  button3.disabled = true;
+    setTimeout(function() {
+    button3.disabled = false;
+  }, 3000);
+ doPLanimaton()
+
+
+
+});
+button3.addEventListener("click", function(){
+    button1.disabled = true;
+    setTimeout(function() {
+    button1.disabled = false;
+  }, 3000);
+  button2.disabled = true;
+    setTimeout(function() {
+    button2.disabled = false;
+  }, 3000);
+  button3.disabled = true;
+    setTimeout(function() {
+    button3.disabled = false;
+  }, 3000);
+ doSCLanimaton()
+
+
+
+});
+
+
+    
+
+
   
 
 
@@ -19,14 +77,19 @@ button.addEventListener("click", doSCLanimaton);
 
 function doRLanimaton(){
     var rock = document.getElementById("RL");
+    rock.classList.remove("rockleftOUT");
+    void rock.offsetWidth;
     rock.classList.add("rockleftIN");
     setTimeout(() => {
         rock.classList.add("rockleftOUT");
        }, 1000);
+       
 }
 
 function doPLanimaton(){
     var paper = document.getElementById("PL");
+    paper.classList.remove("paperleftOUT");
+    void paper.offsetWidth;
     paper.classList.add("paperleftIN");
     setTimeout(() => {
         paper.classList.add("paperleftOUT");
@@ -35,6 +98,8 @@ function doPLanimaton(){
 
 function doSCLanimaton(){
     var scissor = document.getElementById("SCL");
+    scissor.classList.remove("scissorleftOUT");
+    void scissor.offsetWidth;
     scissor.classList.add("scissorleftIN");
     setTimeout(() => {
         scissor.classList.add("scissorleftOUT");
