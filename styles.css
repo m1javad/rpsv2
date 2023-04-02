@@ -1,31 +1,46 @@
-.start.page {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    overflow: hidden;
+*{
+    margin: 0;
 }
 
+/* start page animations */
 
 #StartPage {
     opacity: 1;
     transition: opacity 2s ease-in-out;
+    display: flex;
+
   }
-  
   #StartPage.fade {
     opacity: 0;
   }
-  
-  #GamePage {
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-  }
-  
-  #GamePage.fade {
-    opacity: 1;
+  #StartPage.gone {
+    display: none;
   }
 
+  /* start page animations */
+
+
+
+
+/* First page styles */
+
+
+#startlogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+  #StartPage {
+    background-image: url("back.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 5px;
+    overflow: hidden;
+  }
 .page {
     position: absolute;
     top: 0;
@@ -37,31 +52,182 @@
     display: none;
 }
 .page.active {
-    display: block;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .text{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Press Start 2p', sans-serif;
     font-size: 65px;
-    color: black;
+    margin: 10px;
+    color: rgb(179, 86, 0);
+    text-shadow: 0px 0px 0 rgb(250,188,2),
+    -1px 1px 0 rgb(245,183,0),
+    -2px 2px 0 rgb(240,178,0),
+    -3px 3px 0 rgb(235,173,0),
+    -4px 4px 0 rgb(230,168,0),
+    -5px 5px 0 rgb(225,163,0),
+    -6px 6px 0 rgb(220,158,0),
+    -7px 7px 7px rgba(0,0,0,0.35),
+    -7px 7px 1px rgba(0,0,0,0.5),
+    0px 0px 10px rgba(0,0,0,.2);
+}
+
+
+#startButton{
+    display: flex;
+    justify-content: center;
+    align-items: centerss;
+}
+#startbutton {
+
+    font-size: 35px;
+    font-family: 'Press Start 2p', sans-serif;
+    font-weight:bold
+}
+
+
+#startbutton{
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px ;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+    cursor: pointer;
+
+}
+#startButton:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+
+/* start page style */
+
+
+
+/*game page animations enter*/
+
+  #GamePage {
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in-out;
+  }
+  #GamePage.show{
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    display: flex;
+  }
+/*game page animations enter*/
+
+
+
+/* game page style */
+
+  #GamePage.show{
+    background-color: #09ff00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url("back.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .gamepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* game page style */
+
+  /* top of game page style */
+
+.top{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.scoretop{
+    display: flex;
+    margin: 5px;
+}
+.scoretop>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 5px;
+}
+.playername{
+padding: 4px 7px;
+  border-style: outset;
+  background-color: #8b470f;
+  color: aliceblue;
+  text-shadow: 1px 1px black;
+}
+.score{
+  padding: 4px 7px;
+  border-style: outset;
+  background-color: #8b470f;
+  color: aliceblue;
+  text-shadow: 1px 1px black;
+  border-radius: 20px;
+}
+  /* top of game page style */
+
+    /* mid of game page style */
+
     
+.mid{
+    display: flex;
+    justify-content: space-between;
+}
+.hands>div>img{
+    overflow: hidden;
+
+    width: 50px;
 }
 
 
 
-.start.page {
-    background-color: #ffcccc;
-}
 
-.game.page {
-    background-color: #ccffcc;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .ending.page {
-    background-color: #ccccff;
-}
-
-#startbutton {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-weight:bold
+    background-color: #09ff00;
 }
