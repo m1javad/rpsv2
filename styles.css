@@ -211,29 +211,29 @@ padding: 4px 7px;
 .rightHands>div>img{
    
         position: absolute;
-        width: 350px;
+        width: 400px;
         top: 250px;
-        right: -350px;
+        right: -400px;
     
 }
 
 .leftHands>div>img{
    
     position: absolute;
-    width: 350px;
+    width: 400px;
     top: 250px;
     right: 100%;
 }
  
 .DefaultRightHands{
     position: absolute;
-    width: 350px;
+    width: 400px;
     top: 250px;
-    right:  -350px;
+    right:  -400px;
 }
 .DefaultLeftHands{
     position: absolute;
-    width: 350px;
+    width: 400px;
     top: 250px;
     right: 100%;
 }
