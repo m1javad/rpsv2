@@ -1,18 +1,45 @@
 window.onload = function() {
 
-
-    var button = document.getElementById("startbutton");
+var button = document.getElementById("startbutton");
 button.addEventListener("click", HideStartShowGame);
 
 
+var button = document.getElementById("test");
+button.addEventListener("click", doSCLanimaton);
+
+    
+  
+  
 
 
-  };  
 
 
 
+/*hands animation*/
 
+function doRLanimaton(){
+    var rock = document.getElementById("RL");
+    rock.classList.add("rockleftIN");
+    setTimeout(() => {
+        rock.classList.add("rockleftOUT");
+       }, 1000);
+}
 
+function doPLanimaton(){
+    var paper = document.getElementById("PL");
+    paper.classList.add("paperleftIN");
+    setTimeout(() => {
+        paper.classList.add("paperleftOUT");
+       }, 1000);
+}
+
+function doSCLanimaton(){
+    var scissor = document.getElementById("SCL");
+    scissor.classList.add("scissorleftIN");
+    setTimeout(() => {
+        scissor.classList.add("scissorleftOUT");
+       }, 1000);
+}
 
 
 
@@ -61,3 +88,28 @@ function HideStartShowGame(){
     hidestart();
     showgame();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+};
