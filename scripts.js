@@ -2,7 +2,6 @@ window.onload = function() {
 
 var button = document.getElementById("startbutton");
 button.addEventListener("click", function(){
-
     
     HideStartShowGame()
 });
@@ -11,35 +10,40 @@ button.addEventListener("click", function(){
 var button1 = document.getElementById("test");
 var button2 = document.getElementById("test2");
 var button3 = document.getElementById("test3");
+
 button1.addEventListener("click", function(){
     button1.disabled = true;
     setTimeout(function() {
     button1.disabled = false;
-  }, 3000);
+  }, 2000);
   button2.disabled = true;
     setTimeout(function() {
     button2.disabled = false;
-  }, 3000);
+  }, 2000);
   button3.disabled = true;
     setTimeout(function() {
     button3.disabled = false;
-  }, 3000);
+  }, 2000);
     doRLanimaton()
+    doRRanimaton()
+
 });
 button2.addEventListener("click", function(){
     button1.disabled = true;
     setTimeout(function() {
     button1.disabled = false;
-  }, 3000);
+  }, 2000);
   button2.disabled = true;
     setTimeout(function() {
     button2.disabled = false;
-  }, 3000);
+  }, 2000);
   button3.disabled = true;
     setTimeout(function() {
     button3.disabled = false;
-  }, 3000);
+  }, 2000);
  doPLanimaton()
+ doPRanimaton()
+
 
 
 
@@ -48,16 +52,18 @@ button3.addEventListener("click", function(){
     button1.disabled = true;
     setTimeout(function() {
     button1.disabled = false;
-  }, 3000);
+  }, 2000);
   button2.disabled = true;
     setTimeout(function() {
     button2.disabled = false;
-  }, 3000);
+  }, 2000);
   button3.disabled = true;
     setTimeout(function() {
     button3.disabled = false;
-  }, 3000);
+  }, 2000);
  doSCLanimaton()
+ doSCRanimaton()
+
 
 
 
@@ -103,6 +109,38 @@ function doSCLanimaton(){
     scissor.classList.add("scissorleftIN");
     setTimeout(() => {
         scissor.classList.add("scissorleftOUT");
+       }, 1000);
+}
+
+
+function doRRanimaton(){
+    var rock = document.getElementById("RR");
+    rock.classList.remove("rockrightOUT");
+    void rock.offsetWidth;
+    rock.classList.add("rockrightIN");
+    setTimeout(() => {
+        rock.classList.add("rockrightOUT");
+       }, 1000);
+       
+}
+
+function doPRanimaton(){
+    var paper = document.getElementById("PR");
+    paper.classList.remove("paperrightOUT");
+    void paper.offsetWidth;
+    paper.classList.add("paperrightIN");
+    setTimeout(() => {
+        paper.classList.add("paperrightOUT");
+       }, 1000);
+}
+
+function doSCRanimaton(){
+    var scissor = document.getElementById("SCR");
+    scissor.classList.remove("scissorrightOUT");
+    void scissor.offsetWidth;
+    scissor.classList.add("scissorrightIN");
+    setTimeout(() => {
+        scissor.classList.add("scissorrightOUT");
        }, 1000);
 }
 
