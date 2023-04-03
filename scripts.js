@@ -1,84 +1,121 @@
-window.onload = function() {
-
-var button = document.getElementById("startbutton");
-button.addEventListener("click", function(){
-    
-    HideStartShowGame()
-});
-
-
-var button1 = document.getElementById("test");
-var button2 = document.getElementById("test2");
-var button3 = document.getElementById("test3");
-
-button1.addEventListener("click", function(){
-    button1.disabled = true;
-    setTimeout(function() {
-    button1.disabled = false;
-  }, 2000);
-  button2.disabled = true;
-    setTimeout(function() {
-    button2.disabled = false;
-  }, 2000);
-  button3.disabled = true;
-    setTimeout(function() {
-    button3.disabled = false;
-  }, 2000);
-    doRLanimaton()
-    doRRanimaton()
-
-});
-button2.addEventListener("click", function(){
-    button1.disabled = true;
-    setTimeout(function() {
-    button1.disabled = false;
-  }, 2000);
-  button2.disabled = true;
-    setTimeout(function() {
-    button2.disabled = false;
-  }, 2000);
-  button3.disabled = true;
-    setTimeout(function() {
-    button3.disabled = false;
-  }, 2000);
- doPLanimaton()
- doPRanimaton()
-
-
-
-
-});
-button3.addEventListener("click", function(){
-    button1.disabled = true;
-    setTimeout(function() {
-    button1.disabled = false;
-  }, 2000);
-  button2.disabled = true;
-    setTimeout(function() {
-    button2.disabled = false;
-  }, 2000);
-  button3.disabled = true;
-    setTimeout(function() {
-    button3.disabled = false;
-  }, 2000);
- doSCLanimaton()
- doSCRanimaton()
-
-
-
-
-});
-
-
-    
-
+var player1 = 0
+var player2 = 0
+var pcmove
+var UserInput
+var massage
+var button1
+var button2
+var button3
+window.onload=function(){
+	var startbutton = document.getElementById("startbutton"); 
+    startbutton.addEventListener("click", function(){
+    HideStartShowGame()});
+}
 
   
 
 
 
+    for (let index = 0; index < Infinity;) {
+	if(player1===5){
+		massage=`You won`+ `\n You ${player1} +"  "+ PC ${player2}`;
+	}
+	else if(player2===5){
+		massage=`You lost`+ `\n You ${player1} +"  "+ PC ${player2}`;
+	}
+	else{
+	main()
+
+    }}
+	
+
+	
+		
 
 
+
+/*start page hide func*/
+
+
+
+
+
+function main(){
+         button1 = document.getElementById("userrock");
+         button2 = document.getElementById("userpaper");
+         button3 = document.getElementById("userscissor");
+		 massage="choose your warrior"
+		 UserInput=null
+         button1.addEventListener("click", function(){
+	     UserInput=1
+	     })
+         button2.addEventListener("click", function(){
+         UserInput=2
+		 })
+          button3.addEventListener("click", function(){
+      	  UserInput=3
+		  if(UserInput){
+			game()
+		  }
+		  else{
+			main()
+		  }
+		
+
+})
+
+
+}
+
+/*rps buttons disbaled for 1.5s func*/
+button1.addEventListener("click", function(){
+    button1.disabled = true;
+    setTimeout(function() {
+    button1.disabled = false;
+  }, 1500);
+  button2.disabled = true;
+    setTimeout(function() {
+    button2.disabled = false;
+  }, 1500);
+  button3.disabled = true;
+    setTimeout(function() {
+    button3.disabled = false;
+  }, 1500);
+});
+button2.addEventListener("click", function(){
+    button1.disabled = true;
+    setTimeout(function() {
+    button1.disabled = false;
+  }, 1500);
+  button2.disabled = true;
+    setTimeout(function() {
+    button2.disabled = false;
+  }, 1500);
+  button3.disabled = true;
+    setTimeout(function() {
+    button3.disabled = false;
+  }, 1500);
+});
+button3.addEventListener("click", function(){
+    button1.disabled = true;
+    setTimeout(function() {
+    button1.disabled = false;
+  }, 1500);
+  button2.disabled = true;
+    setTimeout(function() {
+    button2.disabled = false;
+  }, 1500);
+  button3.disabled = true;
+    setTimeout(function() {
+    button3.disabled = false;
+  }, 1500);
+});
+
+
+    
+
+
+ 
 /*hands animation*/
 
 function doRLanimaton(){
@@ -155,41 +192,32 @@ function doSCRanimaton(){
 
 
 
-
-
-
-
-
-
-
-
-
-function toggleDivss() {
-    var start = document.getElementById("StartPage");
-    var game = document.getElementById("GamePage");
-    StartPage.style.display = "none";
-    GamePage.style.display = "block";
-  }
-  function toggleDivs() {
-    var start = document.getElementById("StartPage");
-    var game = document.getElementById("GamePage");
-    start.classList.toggle("fade");
-  }
+/*hide start page func*/
   function hidestart(){
     var start = document.getElementById("StartPage");
     start.classList.toggle("fade");
     setTimeout(() => {
      start.classList.toggle("gone");
     }, 2000);
-  }
+    }
+
+
+
+  /*hide start page func*/
   function showgame(){
     var game = document.getElementById("GamePage");
     game.classList.toggle("show");
 
-  }
+    }
+
+
+
+  /* function for doing hide start pgae and showing game page together*/
 function HideStartShowGame(){
+
     hidestart();
     showgame();
+
 }
 
 
@@ -200,6 +228,64 @@ function HideStartShowGame(){
 
 
 
+/* actual rps codes*/
+
+function pc_move() {
+	let res =  Math.floor(Math.random() * 3 + 1)
+	return res
+}
+function analyze(PcC , UserC){
+    if((UserC)&&(UserC>0)&&(UserC<4)){
+        if(((UserC===1)&&(PcC===3))||((UserC===2)&&(PcC===1))||((UserC===3)&&(PcC===2))){
+            return 1
+        }
+        else if(UserC==PcC){
+            return 3
+        }
+        else{return 2}
+    }
+    else {return 0   }
+}
+function ShowResult(GR){
+    if((GR===1)){
+		player1++
+        massage= "one point for player1"
+    }
+    else if((GR===2)){
+		player2++
+		massage= "one point for player2"
+    }
+    else if((GR===3)){
+        massage= `It's a tie! Try again.`
+    }}
+
+function game(x){
+
+	        pcmove =pc_move()
+			if (pc_move=1){
+				doRRanimaton();
+			} 
+			else if (pc_move=2){
+				doPRanimaton();
+			} 
+			else if (pc_move=3){
+				doSCRanimaton();
+			} 
+			var Result = analyze(pcmove,UserInput);
+            ShowResult(Result);
+		
+	
+}
+
+/*
+if(player1===5){
+	massage=`You won`+ `\n You ${player1} +"  "+ PC ${player2}`;
+		 }
+ else if(player2===5){
+	 massage=`You lost`+ `\n You ${player1} +"  "+ PC ${player2}`;
+ }
+ else{
+	 massage="choose your warrior"*/
 
 
 
@@ -211,8 +297,4 @@ function HideStartShowGame(){
 
 
 
-
-
-
-
-};
+ 
