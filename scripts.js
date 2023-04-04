@@ -6,27 +6,15 @@ var massage
 var button1
 var button2
 var button3
-window.onload=function(){
-	var startbutton = document.getElementById("startbutton"); 
-    startbutton.addEventListener("click", function(){
-    HideStartShowGame()});
-}
 
-  
-
+    window.onload = (event) => {
+      massage="choose your warrior"
+      document.getElementById("roundResult").textContent = `${massage}`;
+      
+    };
 
 
-    for (let index = 0; index < Infinity;) {
-	if(player1===5){
-		massage=`You won`+ `\n You ${player1} +"  "+ PC ${player2}`;
-	}
-	else if(player2===5){
-		massage=`You lost`+ `\n You ${player1} +"  "+ PC ${player2}`;
-	}
-	else{
-	main()
-
-    }}
+    
 	
 
 	
@@ -36,80 +24,65 @@ window.onload=function(){
 
 /*start page hide func*/
 
-
+function USERINPUT1(){
+  buttondis()
+  UserInput=1
+  game()
+   }
+   function USERINPUT2(){
+    buttondis()
+   UserInput=2
+   game()
+  }
+   function USERINPUT3(){
+    buttondis()
+    UserInput=3
+    game()}
 
 
 
 function main(){
-         button1 = document.getElementById("userrock");
+    /*     button1 = document.getElementById("userrock");
          button2 = document.getElementById("userpaper");
-         button3 = document.getElementById("userscissor");
-		 massage="choose your warrior"
-		 UserInput=null
-         button1.addEventListener("click", function(){
-	     UserInput=1
-	     })
-         button2.addEventListener("click", function(){
-         UserInput=2
-		 })
-          button3.addEventListener("click", function(){
-      	  UserInput=3
-		  if(UserInput){
-			game()
-		  }
-		  else{
-			main()
-		  }
+         button3 = document.getElementById("userscissor");*/
+
+         for (let index = 0; index < Infinity; index++) {
+          massage="choose your warrior"
+          document.getElementById("roundResult").textContent = `${massage}`;
+          UserInput=null
+               
+               setTimeout(function(){if(UserInput){
+                game()
+                }},2000)
+           
+
+          
+         }
 		
-
-})
-
+		
 
 }
 
+
+
+
 /*rps buttons disbaled for 1.5s func*/
-button1.addEventListener("click", function(){
-    button1.disabled = true;
-    setTimeout(function() {
-    button1.disabled = false;
-  }, 1500);
-  button2.disabled = true;
-    setTimeout(function() {
-    button2.disabled = false;
-  }, 1500);
-  button3.disabled = true;
-    setTimeout(function() {
-    button3.disabled = false;
-  }, 1500);
-});
-button2.addEventListener("click", function(){
-    button1.disabled = true;
-    setTimeout(function() {
-    button1.disabled = false;
-  }, 1500);
-  button2.disabled = true;
-    setTimeout(function() {
-    button2.disabled = false;
-  }, 1500);
-  button3.disabled = true;
-    setTimeout(function() {
-    button3.disabled = false;
-  }, 1500);
-});
-button3.addEventListener("click", function(){
-    button1.disabled = true;
-    setTimeout(function() {
-    button1.disabled = false;
-  }, 1500);
-  button2.disabled = true;
-    setTimeout(function() {
-    button2.disabled = false;
-  }, 1500);
-  button3.disabled = true;
-    setTimeout(function() {
-    button3.disabled = false;
-  }, 1500);
-});
+ function buttondis(){
+  document.getElementById("USERR").onclick = null;
+      setTimeout(function() {
+        document.getElementById("USERR").onclick = USERINPUT1;
+        }, 1500);
+  document.getElementById("USERP").onclick = null;
+      setTimeout(function() {
+        document.getElementById("USERP").onclick = USERINPUT2;
+        }, 1500);
+  document.getElementById("USERS").onclick = null;
+      setTimeout(function() {
+        document.getElementById("USERS").onclick = USERINPUT3;
+        }, 1500);
+};
+
+
 
 
     
@@ -227,7 +200,6 @@ function HideStartShowGame(){
 
 
 
-
 /* actual rps codes*/
 
 function pc_move() {
@@ -248,34 +220,85 @@ function analyze(PcC , UserC){
 }
 function ShowResult(GR){
     if((GR===1)){
-		player1++
+	    	player1++
+        document.getElementById("PlayerScore").textContent = `${player1}`;
         massage= "one point for player1"
-    }
+        document.getElementById("roundResult").textContent = `${massage}`;    }
     else if((GR===2)){
 		player2++
+    document.getElementById("Pcscore").textContent = `${player2}`;
 		massage= "one point for player2"
-    }
+    document.getElementById("roundResult").textContent = `${massage}`;    }
     else if((GR===3)){
         massage= `It's a tie! Try again.`
-    }}
+        document.getElementById("roundResult").textContent = `${massage}`;    }}
 
-function game(x){
 
-	        pcmove =pc_move()
-			if (pc_move=1){
+    function handsrunr(x){
+      if (x===1){
 				doRRanimaton();
 			} 
-			else if (pc_move=2){
+			else if (x===2){
 				doPRanimaton();
 			} 
-			else if (pc_move=3){
+			else if (x===3){
 				doSCRanimaton();
 			} 
-			var Result = analyze(pcmove,UserInput);
-            ShowResult(Result);
-		
-	
+    }
+    function handsrunl(x){
+      if (x===1){
+				doRLanimaton();
+			} 
+			else if (x===2){
+				doPLanimaton();
+			} 
+			else if (x===3){
+				doSCLanimaton();
+			} 
+    }
+function restartGame(){
+
+var button = document.createElement("button");
+button.innerHTML = "restart the game";
+document.getElementById("roundreS").appendChild(button);
+button.classList.add("buttonstyle");
+button.onclick = function(){location.reload();}
+document.getElementById("USERR").style.display = "none";
+document.getElementById("USERP").style.display = "none";
+document.getElementById("USERS").style.display = "none";
+
+
+
+
+
 }
+
+
+
+function game(){
+
+	    pcmove =pc_move();
+	    handsrunr(pcmove);
+      handsrunl(UserInput);
+			var Result = analyze(pcmove,UserInput);
+       ShowResult(Result);
+       setTimeout(function(){if(player1===5){
+          massage=`You won \n You ${player1}`+" "+  `PC ${player2}`;
+          document.getElementById("roundResult").textContent = `${massage}`;
+          restartGame();
+        }
+        else if(player2===5){
+          massage=`You lost \n You ${player1}`+" "+  `PC ${player2}`;
+          document.getElementById("roundResult").textContent = `${massage}`;
+          restartGame();
+
+        }},1000)
+
+
+
+       }
+	
+
 
 /*
 if(player1===5){

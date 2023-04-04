@@ -733,6 +733,9 @@ padding: 4px 7px;
 
 
     .roundres{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        flex-direction: column;
         display: flex!important;
         justify-content: center;
         align-items: center;
@@ -746,7 +749,25 @@ padding: 4px 7px;
 	    display: inline-block;
        background-color: lightgray;
     }
-
+ .buttonstyle{
+        flex-direction: column;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -o-border-radius: 7px;
+        border-radius: 7px;
+        box-shadow: 0 .2em gray; 
+	display: inline-block;
+       background-color: lightgray;
+       padding: 5px 15px;
+       margin-bottom: 10px;
+ }
+ .buttonstyle:active{
+        box-shadow: none;
+	position: relative;
+	top: .2em;}
 #roundResult{
     
 	margin:5px;

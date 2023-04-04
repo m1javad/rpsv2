@@ -8,7 +8,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
-
 </head>
 <body>
     
@@ -23,12 +22,12 @@
         <div class="top">
             <div class="scoretop">
               <div class="playername">PLAYER</div>
-              <div class="score">4</div>
+              <div class="score" id="PlayerScore">0</div>
             </div>
             
 
             <div class="scoretop">
-              <div class="score">3</div>
+              <div class="score" id="Pcscore">0</div>
               <div class="playername">PLAYER</div>
             </div>
         </div>
@@ -50,12 +49,13 @@
             </div>
         
                 <div class="roundres" >
-                    <p class="roundResults"id="roundResult"><var>massage</var></p>
+                    <p class="roundResults"id="roundResult">t</p>
+                    <div id="roundreS"></div>
                 </div>
 
             <div class="rightHands hands">
                 <div class="rockr">
-                    <img src="rr.png" alt="right rock"id="RR">
+                    <img src="rr.png" alt="right rock"id="RR" >
                 </div>
                 <div class="paperr">
                     <img src="pr.png" alt="right paper"id="PR">
@@ -68,9 +68,9 @@
 
 
         <div class="bottom">
-            <div ><img src="ur.png"id="userrock"></div>
-            <div class="paperuserinput"><img src="up.png"id="userpaper"></div>
-            <div ><img src="usc.png"id="userscissor"></div>
+            <div id="USERR" onclick="USERINPUT1()" ><img src="ur.png"id="userrock"></div>
+            <div id="USERP" onclick="USERINPUT2()" class="paperuserinput" ><img src="up.png"id="userpaper"></div>
+            <div id="USERS" onclick="USERINPUT3()" ><img src="usc.png"id="userscissor"></div>
         </div>
     
     </div>
@@ -78,15 +78,15 @@
 
 
 
-
+    
 
     <div class="start page active" id="StartPage">
         <div id="startlogo">
-            <div class="text">ROCK</div>
-            <div class="text">PAPER</div>
-            <div class="text">SCISSOR</div>
+            <div class="text"  id="RoCK">ROCK</div>
+            <div class="text" id="PapER">PAPER</div>
+            <div class="text" id="SCissOR">SCISSOR</div>
         </div>
-        <div id="startButton">
+        <div id="startButton" onclick="HideStartShowGame()">
             <button id="startbutton">START</button>
         </div>
     </div>
@@ -103,6 +103,8 @@
 
 
 
+    
+    <script src="scripts.js"></script>
 
 </body>
 </html>
