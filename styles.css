@@ -1,7 +1,15 @@
 *{
     margin: 0;
 }
-
+body{
+        background-color: black;
+}
+.border{
+        position: relative;
+        width: 60vw;
+        height: 100vh;
+        left: 15vw;
+}
 
 /* start page animations */
 
@@ -34,23 +42,23 @@
 }
 
   #StartPage {
-    background-image: url("back.jpg");
-    background-size:cover;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
+    
     border-radius: 5px;
     overflow: hidden;
   }
 .page {
+     background-image: url("back.jpg");
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 70vw;
     padding: 20px;
     box-sizing: border-box;
     display: none;
+    overflow: hidden;
+
 }
 .page.active {
     flex-direction: column;
@@ -136,25 +144,15 @@
 
   #GamePage.show{
     background-color: #09ff00;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
     padding: 20px;
     box-sizing: border-box;
-    background-image: url("back.jpg");
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
     border-radius: 5px;
-    overflow: hidden;
   }
 
   .gamepage{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -729,7 +727,9 @@ padding: 4px 7px;
 	top: .2em;}
 
     
-
+        .bottom{
+                margin-top: auto;
+        }
 
 
     .roundres{
@@ -808,7 +808,9 @@ padding: 4px 7px;
 .ending.page {
     background-color: #09ff00;
 }
-
+.roundres{
+        margin-top: 50px;  
+  }
 
 
 

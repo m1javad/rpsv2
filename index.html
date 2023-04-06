@@ -13,81 +13,66 @@
     
 
 
-    <div class="ending page "></div>
-
-
-
-
-    <div class="gamepage " id="GamePage">
-        <div class="top">
-            <div class="scoretop">
-              <div class="playername">PLAYER</div>
-              <div class="score" id="PlayerScore">0</div>
+    <div class="border">
+        <div class="ending page "></div>
+        <div class="gamepage page" id="GamePage">
+            <div class="top">
+                <div class="scoretop">
+                  <div class="playername">PLAYER</div>
+                  <div class="score" id="PlayerScore">0</div>
+                </div>
+        
+                <div class="scoretop">
+                  <div class="score" id="Pcscore">0</div>
+                  <div class="playername">PLAYER</div>
+                </div>
             </div>
-            
-
-            <div class="scoretop">
-              <div class="score" id="Pcscore">0</div>
-              <div class="playername">PLAYER</div>
+            <div class="mid">
+                <div class="leftHands hands">
+                    <div class="rockl">
+                        <img src="rl.png" alt="left rock" id="RL">
+                    </div>
+                    <div class="paperl">
+                        <img src="pl.png" alt="left paper"id="PL">
+                    </div>
+                    <div class="scissorl">
+                        <img src="scl.png" alt="left scissor"id="SCL">
+                    </div>
+                </div>
+        
+                    <div class="roundres" >
+                        <p class="roundResults"id="roundResult">t</p>
+                        <div id="roundreS"></div>
+                    </div>
+                <div class="rightHands hands">
+                    <div class="rockr">
+                        <img src="rr.png" alt="right rock"id="RR" >
+                    </div>
+                    <div class="paperr">
+                        <img src="pr.png" alt="right paper"id="PR">
+                    </div>
+                    <div class="scissorr">
+                        <img src="scr.png" alt="left scissor"id="SCR">
+                    </div>
+                </div>
             </div>
-        </div>
-
-
-
-        <div class="mid">
-            <div class="leftHands hands">
-                <div class="rockl">
-                    <img src="rl.png" alt="left rock" id="RL">
-                </div>
-                <div class="paperl">
-                    <img src="pl.png" alt="left paper"id="PL">
-                </div>
-                <div class="scissorl">
-                    <img src="scl.png" alt="left scissor"id="SCL">
-
-                </div>
+            <div class="bottom">
+                <div id="USERR" onclick="USERINPUT1()" ><img src="ur.png"id="userrock"></div>
+                <div id="USERP" onclick="USERINPUT2()" class="paperuserinput" ><img src="up.png"id="userpaper"></div>
+                <div id="USERS" onclick="USERINPUT3()" ><img src="usc.png"id="userscissor"></div>
             </div>
         
-                <div class="roundres" >
-                    <p class="roundResults"id="roundResult">t</p>
-                    <div id="roundreS"></div>
-                </div>
-
-            <div class="rightHands hands">
-                <div class="rockr">
-                    <img src="rr.png" alt="right rock"id="RR" >
-                </div>
-                <div class="paperr">
-                    <img src="pr.png" alt="right paper"id="PR">
-                </div>
-                <div class="scissorr">
-                    <img src="scr.png" alt="left scissor"id="SCR">
-                </div>
+        </div>
+        
+        <div class="start page active" id="StartPage">
+            <div id="startlogo">
+                <div class="text"  id="RoCK">ROCK</div>
+                <div class="text" id="PapER">PAPER</div>
+                <div class="text" id="SCissOR">SCISSOR</div>
             </div>
-        </div>
-
-
-        <div class="bottom">
-            <div id="USERR" onclick="USERINPUT1()" ><img src="ur.png"id="userrock"></div>
-            <div id="USERP" onclick="USERINPUT2()" class="paperuserinput" ><img src="up.png"id="userpaper"></div>
-            <div id="USERS" onclick="USERINPUT3()" ><img src="usc.png"id="userscissor"></div>
-        </div>
-    
-    </div>
-
-
-
-
-    
-
-    <div class="start page active" id="StartPage">
-        <div id="startlogo">
-            <div class="text"  id="RoCK">ROCK</div>
-            <div class="text" id="PapER">PAPER</div>
-            <div class="text" id="SCissOR">SCISSOR</div>
-        </div>
-        <div id="startButton" onclick="HideStartShowGame()">
-            <button id="startbutton">START</button>
+            <div id="startButton" onclick="HideStartShowGame()">
+                <button id="startbutton">START</button>
+            </div>
         </div>
     </div>
 
